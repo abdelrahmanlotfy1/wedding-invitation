@@ -1,0 +1,124 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Cairo", sans-serif; background: #f7f0e6; color: #27020a; direction: rtl; font-size: 16px; }
+h1, h2, h3 { font-family: "Amiri", serif; font-weight: 400; }
+section { position: relative; overflow: hidden; }
+
+.section-light { background: #f7f0e6; color: #3b0812; }
+.section-dark { background: #3d141d; color: #f7f0e6; }
+.subtitle { font-size: 15px; font-weight: 500; color: #b89455; }
+.ornament { color: #c9a66b; font-size: 25px; }
+
+/* ورد الزينة */
+.deco { position: absolute; width: clamp(150px, 24vw, 300px); aspect-ratio: 220 / 160; pointer-events: none; z-index: 1; opacity: .95; }
+.deco.tl { top: 0; left: 0; transform: scaleX(-1); }
+.deco.tr { top: 0; right: 0; }
+.deco.bl { bottom: 0; left: 0; transform: scale(-1, -1); }
+.deco.br { bottom: 0; right: 0; transform: scaleY(-1); }
+
+/* البداية */
+.hero, .final {
+  min-height: 100vh; min-height: 100svh;
+  display: flex; justify-content: center; align-items: center; text-align: center; color: #fff;
+  background: linear-gradient(rgba(39,2,10,.55), rgba(39,2,10,.8)), url("images/hero.jpg") center / cover no-repeat, #3d141d;
+}
+.final { background-image: linear-gradient(rgba(39,2,10,.6), rgba(39,2,10,.85)), url("images/final.jpg"); }
+.hero { padding: 90px 20px 110px; }
+.hero-content, .final-content { position: relative; z-index: 2; }
+.small-title { font-size: 16px; margin-bottom: 22px; color: #f0dfc5; }
+
+/* دايرة الصورة */
+.photo-circle {
+  position: relative; width: clamp(210px, 40vw, 300px); aspect-ratio: 1; margin: 0 auto 28px;
+  border-radius: 50%; border: 3px solid #d8b77a; overflow: hidden;
+  box-shadow: 0 0 0 10px rgba(216,183,122,.22), 0 20px 50px rgba(0,0,0,.4);
+  background: rgba(247,240,230,.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; color: #e1d0c1; line-height: 1.6;
+}
+.photo-circle img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.hero h1 { font-size: clamp(60px, 10vw, 120px); line-height: 1; margin-bottom: 18px; color: #f7e9d2; }
+.couple { display: flex; justify-content: center; align-items: center; gap: 20px; font-family: "Amiri", serif; font-size: 40px; }
+.ampersand { color: #d8b77a; font-size: 44px; }
+.date { margin-top: 20px; font-size: 18px; color: #f0dfc5; }
+.scroll { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 14px; z-index: 2; }
+.scroll-line { width: 1px; height: 40px; background: #d8b77a; }
+
+/* الدعوة */
+.invitation { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 90px 20px; }
+.couple-art { width: clamp(150px, 22vw, 200px); aspect-ratio: 220 / 280; margin-bottom: 20px; }
+.invitation h2 { font-size: clamp(50px, 7vw, 90px); margin: 14px 0; color: #5a1f2b; }
+.description { max-width: 600px; font-family: "Amiri", serif; font-size: 25px; line-height: 1.9; color: #6b4a4f; }
+.invitation-details { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px 80px; margin-top: 60px; }
+.invitation-details div { display: flex; flex-direction: column; gap: 8px; }
+.invitation-details span { font-size: 14px; color: #b89455; }
+.invitation-details strong { font-size: 17px; color: #5a1f2b; }
+
+/* الذكريات */
+.memories { padding: 110px 8%; }
+.section-heading { text-align: center; margin-bottom: 70px; }
+.section-heading h2 { font-size: clamp(40px, 6vw, 80px); max-width: 800px; margin: 20px auto; line-height: 1.2; color: #5a1f2b; }
+.gallery { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+.photo { overflow: hidden; border: 5px solid #eee2d2; background: #eadbc8; box-shadow: 0 15px 40px rgba(61,20,29,.12); }
+.photo img { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform .8s ease; }
+.photo:hover img { transform: scale(1.05); }
+.photo-large { grid-column: span 2; }
+.photo-large img { height: 560px; }
+
+/* الزفاف */
+.wedding { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 20px; }
+.wedding-content { position: relative; z-index: 2; }
+.wedding-content h2 { font-size: clamp(70px, 10vw, 140px); line-height: 1; margin: 30px 0; color: #f7e9d2; }
+.gold-line { width: 80px; height: 1px; background: #c9a66b; margin: 30px auto; }
+.time { font-family: "Amiri", serif; font-size: 30px; color: #d8b77a; }
+.venue { margin-top: 20px; line-height: 2; font-size: 17px; color: #e1d0c1; }
+
+/* الزي */
+.dress-code { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 70px 20px; }
+.dress-content h2 { font-size: clamp(55px, 8vw, 100px); margin: 20px 0; color: #5a1f2b; }
+.dress-content p:last-child { font-family: "Amiri", serif; font-size: 25px; color: #74555a; }
+
+/* المكان */
+.location { min-height: 80vh; display: grid; grid-template-columns: 1fr 1fr; }
+.location-image { background: url("images/venue.jpg") center / cover no-repeat, #5a1f2b; }
+.location-content { background: #eadbc8; display: flex; flex-direction: column; justify-content: center; padding: 80px; }
+.location-content h2 { font-size: clamp(50px, 6vw, 85px); line-height: 1.1; margin: 24px 0; color: #5a1f2b; }
+.location-content > p:not(.subtitle) { font-family: "Amiri", serif; font-size: 25px; line-height: 1.6; color: #68484e; }
+.location-button { display: inline-block; width: fit-content; margin-top: 36px; padding: 14px 26px; border: 1px solid #5a1f2b; color: #5a1f2b; text-decoration: none; font-size: 15px; transition: .3s; }
+.location-button:hover, .location-button:focus-visible { background: #5a1f2b; color: #f7f0e6; }
+
+/* العد التنازلي */
+.countdown { min-height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 70px 20px; }
+.countdown-container { display: flex; gap: 60px; margin-top: 50px; }
+.count-box { display: flex; flex-direction: column; min-width: 70px; }
+.count-box strong { font-family: "Amiri", serif; font-size: 65px; font-weight: 400; color: #f7e9d2; }
+.count-box span { font-size: 15px; color: #c9a66b; }
+.countdown-container h2 { font-size: 40px; color: #f7e9d2; }
+
+/* الختام */
+.final { padding: 100px 20px; }
+.final h2 { font-size: clamp(60px, 10vw, 130px); line-height: 1.05; margin: 30px 0; color: #f7e9d2; }
+.final-names { font-family: "Amiri", serif; font-size: 35px; color: #d8b77a; margin-bottom: 15px; }
+.thank-you { margin-top: 30px; font-family: "Amiri", serif; font-size: 23px; color: #eadbc8; }
+
+/* ظهور تدريجي (الـ JS هو اللي بيضيف .hidden) */
+.hidden { opacity: 0; transform: translateY(40px); transition: opacity 1s ease, transform 1s ease; }
+.hidden.show { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .hidden { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+/* موبايل */
+@media (max-width: 768px) {
+  .couple { font-size: 30px; }
+  .ampersand { font-size: 34px; }
+  .gallery { grid-template-columns: 1fr; }
+  .photo-large { grid-column: auto; }
+  .photo img, .photo-large img { height: 400px; }
+  .location { grid-template-columns: 1fr; }
+  .location-image { min-height: 380px; }
+  .location-content { padding: 60px 30px; }
+  .countdown-container { gap: 14px; }
+  .count-box { min-width: 56px; }
+  .count-box strong { font-size: 40px; }
+  .deco { width: 130px; }
+}
